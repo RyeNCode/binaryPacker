@@ -1,0 +1,22 @@
+{
+	"plugins":[
+		"plugins/markdown"
+	],
+	"source": {
+		"include": ["./binaryPacker.mjs","./README.md","./package.json"],
+		"includePattern": ".+\\.(js(doc|x)?|mjs)$"
+		//,"exclude": ["./node_modules","./docs","./lib","./spec"]
+	},
+	"opts":{
+		"destination": "./docs/"
+		,"recurse": true
+		,"pedantic": true
+		,"private": false
+	},
+	"templates":{
+		"default": {
+			"includeDate": false,
+			"outputSourceFiles": false
+		}
+	}
+}

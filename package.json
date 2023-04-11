@@ -1,0 +1,41 @@
+{
+  "name": "binaryPacker",
+  "version": "1.0.0",
+  "description": "Utility to pack and upack objects into/from a binary format.",
+  "type": "module",
+  "browser": true,
+  "private": false,
+  "license": "GPL-3.0-or-later",
+  "author": {
+    "name": "Ryan Brown",
+    "email": "ryan@lightdeprived.com",
+    "url": "http://www.lightdeprivedgames.com/"
+  },
+  "devDependencies": {
+    "jasmine": "^4.5.0",
+    "js-beautify": "^1.14.7",
+    "jsdoc": "^4.0.0",
+    "rollup": "^3.14.0",
+    "uglify-js": "^3.17.4"
+  },
+  "scripts":{
+    "test": "jasmine",
+    "format": "js-beautify -r ./**/*.mjs ./spec/**/*.mjs ./www/**/*.mjs ./www/**/*.js",
+    "clearDoc":" rm -rf docs/binaryPacker/`npm pkg get version | cut -d'\"' -f 2 ",
+    "docs": "npm run clearDoc && jsdoc -c jsdoc.json --verbose",
+    "fdoc": "npm run format && npm run docs",
+    "rollup": "rm -rf ./lib && rollup -c",
+    "uglify": "uglifyjs ./lib/binaryPacker.mjs -o ./lib/binaryPacker.min.mjs --module -m -c",
+    "build": "npm run fdoc && npm test && npm run rollup && npm run uglify",
+    "postversion": "npm run docs"
+  },
+  "files": [
+    "./lib/**/*"
+  ],
+  "browser": true,
+  "private": false,
+  "keywords": [
+    "pack",
+    "binary"
+  ]
+}
