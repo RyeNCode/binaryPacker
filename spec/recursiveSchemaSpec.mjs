@@ -1,4 +1,4 @@
-import BinaryPacker from '../binaryPacker.mjs';
+import BinaryPacker from '../binarypacker.mjs';
 
 const mySchema = {
   "definitions": {

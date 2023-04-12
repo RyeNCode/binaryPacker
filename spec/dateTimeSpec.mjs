@@ -1,4 +1,4 @@
-import BinaryPacker from '../binaryPacker.mjs';
+import BinaryPacker from '../binarypacker.mjs';
 
 describe("datetime", function () {
   it("datetime", function () {

@@ -3,7 +3,10 @@
 		"plugins/markdown"
 	],
 	"source": {
-		"include": ["./binaryPacker.mjs","./README.md","./package.json"],
+		"include": ["./binarypacker.mjs"
+			,"./README.md"
+			,"./package.json"
+		],
 		"includePattern": ".+\\.(js(doc|x)?|mjs)$"
 		//,"exclude": ["./node_modules","./docs","./lib","./spec"]
 	},

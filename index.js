@@ -1,1 +1,1 @@
-module.exports = require('./lib/binaryPacker.mjs');
+module.exports = require('./lib/binarypacker.mjs');

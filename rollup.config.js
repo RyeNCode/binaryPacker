@@ -1,8 +1,8 @@
 export default {
-  input: './binaryPacker.mjs',
+  input: './binarypacker.mjs',
   output: {
-    file: './lib/binaryPacker.mjs',
+    file: './lib/binarypacker.mjs',
     format: 'es',
-    name: 'binaryPacker'
+    name: 'binarypacker'
   },
 };

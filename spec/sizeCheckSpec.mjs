@@ -1,4 +1,4 @@
-import BinaryPacker from '../binaryPacker.mjs';
+import BinaryPacker from '../binarypacker.mjs';
 
 describe("sizecheck", function () {
   it("sizecheck", function () {

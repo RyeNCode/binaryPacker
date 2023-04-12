@@ -13,10 +13,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/RyeNCode/binaryPacker.git"
+    "url": "https://github.com/RyeNCode/binarypacker.git"
   },
   "bugs":{
-    "url" : "https://github.com/RyeNCode/binaryPacker/issues"
+    "url" : "https://github.com/RyeNCode/binarypacker/issues"
   },
   "devDependencies": {
     "jasmine": "^4.5.0",
@@ -28,11 +28,11 @@
   "scripts": {
     "test": "jasmine",
     "format": "js-beautify -r ./**/*.mjs ./spec/**/*.mjs ./www/**/*.mjs ./www/**/*.js",
-    "clearDoc": " rm -rf docs/binaryPacker/`npm pkg get version | cut -d'\"' -f 2 ",
-    "docs": "npm run clearDoc && jsdoc -c jsdoc.json --verbose",
+    "moveDocs": "cp -rf docs/\\@ryencode/binarypacker/ ./docs/binaryPacker/ && rm -rf docs/\\@ryencode",
+    "docs": "jsdoc -c jsdoc.json --verbose && npm run moveDocs ",
     "fdoc": "npm run format && npm run docs",
     "rollup": "rm -rf ./lib && rollup -c",
-    "uglify": "uglifyjs ./lib/binaryPacker.mjs -o ./lib/binaryPacker.min.mjs --module -m -c",
+    "uglify": "uglifyjs ./lib/binarypacker.mjs -o ./lib/binarypacker.min.mjs --module -m -c",
     "build": "npm run fdoc && npm test && npm run rollup && npm run uglify",
     "postversion": "npm run docs"
   },
