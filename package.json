@@ -1,6 +1,6 @@
 {
   "name": "@ryencode/binarypacker",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Utility to pack and upack objects into/from a binary format.",
   "type": "module",
   "main": "index.js",
@@ -16,8 +16,8 @@
     "type": "git",
     "url": "https://github.com/RyeNCode/binarypacker.git"
   },
-  "bugs":{
-    "url" : "https://github.com/RyeNCode/binarypacker/issues"
+  "bugs": {
+    "url": "https://github.com/RyeNCode/binarypacker/issues"
   },
   "devDependencies": {
     "jasmine": "^4.5.0",
