@@ -4,7 +4,7 @@ Sending binary data across a socket or in a file will likely be much more size e
 Being able to define a schema for a binary data type or document saves the developer the stress of manually having to serialize and deserialize each component by hand.
 
 ## Installation
-`npm install binarypacker`
+`npm install @ryencode/binarypacker`
 ## Using BinaryPacker
 ### Basic usage
 The following example assumes a schema has been defined.
