@@ -1,5 +1,5 @@
 {
-  "name": "binaryPacker",
+  "name": "binarypacker",
   "version": "1.1.0",
   "description": "Utility to pack and upack objects into/from a binary format.",
   "type": "module",
@@ -10,6 +10,13 @@
     "name": "Ryan Brown",
     "email": "ryan@lightdeprived.com",
     "url": "http://www.lightdeprivedgames.com/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RyeNCode/binaryPacker.git"
+  },
+  "bugs":{
+    "url" : "https://github.com/RyeNCode/binaryPacker/issues"
   },
   "devDependencies": {
     "jasmine": "^4.5.0",
@@ -30,7 +37,8 @@
     "postversion": "npm run docs"
   },
   "files": [
-    "./lib/**/*"
+    "./lib/**/*",
+    "./docs/**/*"
   ],
   "keywords": [
     "pack",
