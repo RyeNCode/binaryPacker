@@ -30,7 +30,7 @@
     "test": "jasmine",
     "format": "js-beautify -r ./**/*.mjs ./spec/**/*.mjs ./www/**/*.mjs ./www/**/*.js",
     "mvDocs": "mv ./docs/@ryencode/binarypacker/*/* ./docs/ && rm -rf ./docs/@ryencode",
-    "docs": "rm -rf ./docs/ && jsdoc -c jsdoc.json --verbose && npm run docs",
+    "docs": "rm -rf ./docs/ && jsdoc -c jsdoc.json --verbose && npm run mvDocs",
     "fdoc": "npm run format && npm run docs",
     "rollup": "rm -rf ./lib && rollup -c",
     "uglify": "uglifyjs ./lib/binarypacker.mjs -o ./lib/binarypacker.min.mjs --module -m -c",
