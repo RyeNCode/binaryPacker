@@ -397,7 +397,7 @@ class BinaryPacker {
     this.#checkBufferLength(value.byteLength);
     const binaryBuf = new Uint8Array(this.#buffer, this.#position, value.byteLength);
     binaryBuf.set(new Uint8Array(value));
-    
+
     this.#position += value.byteLength;
   }
 
@@ -409,7 +409,7 @@ class BinaryPacker {
    * @param {BinaryOptions} options options for encoding
    * @returns {ArrayBuffer}
    */
-  #decodeBinary(options){
+  #decodeBinary(options) {
     const size = this.#decodeNumber(Uint32Array, null);
     const binaryBuf = new Uint8Array(this.#buffer, this.#position, size);
     const resultBuffer = new ArrayBuffer(size);

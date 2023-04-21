@@ -26,7 +26,7 @@
     
 
 
-    <h3>@ryencode/binarypacker 1.1.4</h3>
+    <h3>@ryencode/binarypacker 1.2.0</h3>
 
 
 
@@ -245,6 +245,11 @@ Optionally an <code>options</code> object may be passed in to provided extra det
 <td>datetime</td>
 <td>8</td>
 <td>Date object (internally stores the getTime() result as a uint64 value)</td>
+</tr>
+<tr>
+<td>binary</td>
+<td>4+</td>
+<td>4 bytes for the number of bytes then the encoded bytes. Value must be a ArrayBuffer. Decoded value will be ArrayBuffer</td>
 </tr>
 </tbody>
 </table>

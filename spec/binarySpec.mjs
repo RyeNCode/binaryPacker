@@ -8,7 +8,7 @@ describe("binary", function () {
       }
     };
 
-    const data = [12345,123456]
+    const data = [12345, 123456]
     const sourceBuffer = new ArrayBuffer(8);
     const dataArray = new Int32Array(sourceBuffer);
     dataArray.set(data);
@@ -18,7 +18,7 @@ describe("binary", function () {
     const bp = new BinaryPacker(schema);
     const bin = bp.encode(obj);
     const res = bp.decode(bin);
-    
+
     expect(res.binaryData).toEqual(sourceBuffer);
   });
 

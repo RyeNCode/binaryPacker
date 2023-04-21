@@ -17,7 +17,7 @@ describe("datetime", function () {
     const bp = new BinaryPacker(schema);
     const bin = bp.encode(obj);
     const res = bp.decode(bin);
-    
+
     expect(res.date).toEqual(dateTimeVal);
   });
 
