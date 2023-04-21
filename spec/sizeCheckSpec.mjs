@@ -1,7 +1,7 @@
 import BinaryPacker from '../binarypacker.mjs';
 
 describe("sizecheck", function () {
-  it("sizecheck", function () {
+  xit("sizecheck", function () {
     const schema = {
       schema: {
         date: { type: "datetime" },
@@ -19,9 +19,6 @@ describe("sizecheck", function () {
     const stringified = JSON.stringify(obj, null, null);
 
     const encoded = new TextEncoder().encode(stringified);
-
-    console.log(`Binary: ${bin.byteLength}, Stringy: ${encoded.length} => ${(bin.byteLength/encoded.length*100).toFixed(3)}%`);
-
 
   });
 
