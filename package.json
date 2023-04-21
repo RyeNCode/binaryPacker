@@ -1,6 +1,6 @@
 {
   "name": "@ryencode/binarypacker",
-  "version": "1.1.4",
+  "version": "1.2.0",
   "description": "Utility to pack and upack objects into/from a binary format.",
   "type": "module",
   "main": "index.js",
