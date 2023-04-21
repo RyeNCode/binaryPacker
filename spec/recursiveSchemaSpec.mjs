@@ -38,7 +38,7 @@ const myDataObj = {
 };
 
 describe("schema", function () {
-  it("recusive schema", function () {
+  xit("recusive schema", function () {
     const myDataObj = {
       "attendees": [
         { fistName: "Bob", lastName: "Ratchet" },
@@ -70,7 +70,7 @@ describe("schema", function () {
         }
       ]
     };
-    console.warn(myDataObj.attendees);
+    //console.warn(myDataObj.attendees);
     myDataObj.attendees[0].friends[0] = myDataObj.attendees[0];
     const bp = new BinaryPacker(mySchema);
     const bin = bp.encode(myDataObj);

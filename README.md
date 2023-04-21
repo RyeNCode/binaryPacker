@@ -1,3 +1,4 @@
+
 # BinaryPacker
 BinaryPacker is a utility to serialize a JavaScript object into an ArrayBuffer according to a provided schmea and deserialize an ArrayBuffer according to a given schema.
 Sending binary data across a socket or in a file will likely be much more size efficient than a stringified version of the data.
@@ -150,6 +151,7 @@ const myDataObj = {
 |float32|4|Signed 32bit floating point|
 |float64|8|Signed 64bit floating point|
 |datetime|8|Date object (internally stores the getTime() result as a uint64 value)|
+|binary|4+|4 bytes for the number of bytes then the encoded bytes. Value must be a ArrayBuffer. Decoded value will be ArrayBuffer|
 
 #### String
 String type supports options
