@@ -343,7 +343,7 @@ class BinaryPacker {
       if (typeof (options.content) !== 'undefined' && options.content !== null) {
         //has defined content, must match.
         if (result !== options.content)
-          throw new Error("string content doesn't match schema definition");
+          throw new Error(`string content doesn't match schema definition; expected \"${options.content}\" but found \"${result}\"`);
       }
     }
     return result;
@@ -576,9 +576,12 @@ class BinaryPacker {
 
   /**
    * Decodes an object to the pre-supplied mapping
+   * @param {ArrayBuffer} buffer to decode
    * @returns {Object}
    */
-  decode() {
+  decode(arrayBuffer) {
+    if ((arrayBuffer instanceof ArrayBuffer) !== true) throw new TypeError("input was not of type ArrayBuffer");
+    this.#buffer = arrayBuffer;
     const resultObject = {};
     const schema = this.#schema;
     this.#position = 0;
