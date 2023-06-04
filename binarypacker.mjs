@@ -93,10 +93,7 @@ class BinaryPacker {
    * @returns {bool}
    */
   #validateSchema(schema) {
-    if (this.#pendingDefinitions.length > 0) {
-      console.error(`undefined types: [${this.#pendingDefinitions.join(",")}]`);
-      throw new Error(`undefined types referenced`);
-    }
+    
     //every type must be defined
     if (typeof (schema) === 'undefined' || schema === null) return false;
     for (let mapName in schema) {
@@ -105,8 +102,10 @@ class BinaryPacker {
       const type = map.type === "array" ? map.options.type : map.type;
       if (BinaryPacker.#builtInDefs.includes(type)) continue; //ok
       if (this.#definitions.hasOwnProperty(type)) continue; //ok
-      console.error(`${type} is not defined`)
-      return false;
+      this.#pendingDefinitions.push(type);
+    }
+    if (this.#pendingDefinitions.length > 0) {
+      throw new Error(`undefined types: [${this.#pendingDefinitions.join(",")}]`);
     }
     return true;
   }
@@ -343,7 +342,7 @@ class BinaryPacker {
       if (typeof (options.content) !== 'undefined' && options.content !== null) {
         //has defined content, must match.
         if (result !== options.content)
-          throw new Error("string content doesn't match schema definition");
+          throw new Error(`string content doesn't match schema definition; expected \"${options.content}\" but found \"${result}\"`);
       }
     }
     return result;
@@ -576,9 +575,12 @@ class BinaryPacker {
 
   /**
    * Decodes an object to the pre-supplied mapping
+   * @param {ArrayBuffer} buffer to decode
    * @returns {Object}
    */
-  decode() {
+  decode(arrayBuffer) {
+    if ((arrayBuffer instanceof ArrayBuffer) !== true) throw new TypeError("input was not of type ArrayBuffer");
+    this.#buffer = arrayBuffer;
     const resultObject = {};
     const schema = this.#schema;
     this.#position = 0;
