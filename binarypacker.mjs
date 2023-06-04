@@ -93,7 +93,7 @@ class BinaryPacker {
    * @returns {bool}
    */
   #validateSchema(schema) {
-    
+
     //every type must be defined
     if (typeof (schema) === 'undefined' || schema === null) return false;
     for (let mapName in schema) {

@@ -9,11 +9,11 @@ describe("issues", function () {
           'type': 'string',
           'options': { 'content': 'Content' }
         },
-        'definitions': {type:'sd'}
+        'definitions': { type: 'sd' }
       },
       'schema': {
         'staticContent': { 'type': 'static' },
-        'badType':{'type':'bob'}
+        'badType': { 'type': 'bob' }
       }
     };
 
