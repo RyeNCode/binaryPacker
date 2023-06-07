@@ -12,17 +12,17 @@ describe("issues", function () {
 
     const schema = {
       'schema': {
-        'int8': {'type':'int8'},
-        'uint8': {'type':'uint8'},
-        'int16': {'type':'int16'},
-        'uint16': {'type':'uint16'},
-        'int32': {'type':'int32'},
-        'uint32': {'type':'uint32'},
-        'int64': {'type':'int64'},
-        'uint64': {'type':'uint64'},
-        'float32': {'type':'float32'},
-        'float64': {'type':'float64'},
-        'datetime': {'type': 'datetime'}
+        'int8': { 'type': 'int8' },
+        'uint8': { 'type': 'uint8' },
+        'int16': { 'type': 'int16' },
+        'uint16': { 'type': 'uint16' },
+        'int32': { 'type': 'int32' },
+        'uint32': { 'type': 'uint32' },
+        'int64': { 'type': 'int64' },
+        'uint64': { 'type': 'uint64' },
+        'float32': { 'type': 'float32' },
+        'float64': { 'type': 'float64' },
+        'datetime': { 'type': 'datetime' }
       }
     };
 
@@ -30,17 +30,17 @@ describe("issues", function () {
     const bp2 = new BinaryPacker(schema);
 
     const srcObj = {
-        'int8': 23,
-        'uint8': 3,
-        'int16': 43,
-        'uint16': 134,
-        'int32': 113,
-        'uint32': 8181,
-        'int64': BigInt(818122),
-        'uint64': BigInt(23123),
-        'float32': inexactFloat,
-        'float64': 456.212337,
-        'datetime': new Date()
+      'int8': 23,
+      'uint8': 3,
+      'int16': 43,
+      'uint16': 134,
+      'int32': 113,
+      'uint32': 8181,
+      'int64': BigInt(818122),
+      'uint64': BigInt(23123),
+      'float32': inexactFloat,
+      'float64': 456.212337,
+      'datetime': new Date()
     }
 
     const buffer = bp1.encode(srcObj);

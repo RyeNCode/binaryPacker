@@ -288,7 +288,6 @@ class BinaryPacker {
    */
   #decodeArray(options) {
     //get the length
-    this.#byteAlignAdj(Uint32Array.BYTES_PER_ELEMENT);
     const arrayLength = this.#dataView.getUint32(this.#position);
     this.#position += Uint32Array.BYTES_PER_ELEMENT;
     //for each element, encode the thing
@@ -507,56 +506,66 @@ class BinaryPacker {
       case 'string':
         return this.#decodeString(options);
         break;
-      case 'int8':{
-              const value = this.#dataView.getInt8(this.#position);
-              this.#position += Int8Array.BYTES_PER_ELEMENT;
-              return value;
-              break;}
-      case 'uint8':{
-              const value = this.#dataView.getUint8(this.#position);
-              this.#position += Uint8Array.BYTES_PER_ELEMENT;
-              return value;
-              break;}
-      case 'int16':{
-              const value = this.#dataView.getInt16(this.#position);
-              this.#position += Int16Array.BYTES_PER_ELEMENT;
-              return value;
-              break;}
-      case 'uint16':{
-              const value = this.#dataView.getUint16(this.#position);
-              this.#position += Uint16Array.BYTES_PER_ELEMENT;
-              return value;
-              break;}
-      case 'int32':{
-              const value = this.#dataView.getInt32(this.#position);
-              this.#position += Int32Array.BYTES_PER_ELEMENT;
-              return value;
-              break;}
-      case 'uint32':{
-              const value = this.#dataView.getUint32(this.#position);
-              this.#position += Uint32Array.BYTES_PER_ELEMENT;
-              return value;
-              break;}
-      case 'int64':{
-              const value = this.#dataView.getBigInt64(this.#position);
-              this.#position += BigInt64Array.BYTES_PER_ELEMENT;
-              return value;
-              break;}
-      case 'uint64':{
-              const value = this.#dataView.getBigUint64(this.#position);
-              this.#position += BigUint64Array.BYTES_PER_ELEMENT;
-              return value;
-              break;}
-      case 'float32':{
-              const value = this.#dataView.getFloat32(this.#position);
-              this.#position += Float32Array.BYTES_PER_ELEMENT;
-              return value;
-              break;}
-      case 'float64':{
-              const value = this.#dataView.getFloat64(this.#position);
-              this.#position += Float64Array.BYTES_PER_ELEMENT;
-              return value;
-              break;}
+      case 'int8': {
+        const value = this.#dataView.getInt8(this.#position);
+        this.#position += Int8Array.BYTES_PER_ELEMENT;
+        return value;
+        break;
+      }
+      case 'uint8': {
+        const value = this.#dataView.getUint8(this.#position);
+        this.#position += Uint8Array.BYTES_PER_ELEMENT;
+        return value;
+        break;
+      }
+      case 'int16': {
+        const value = this.#dataView.getInt16(this.#position);
+        this.#position += Int16Array.BYTES_PER_ELEMENT;
+        return value;
+        break;
+      }
+      case 'uint16': {
+        const value = this.#dataView.getUint16(this.#position);
+        this.#position += Uint16Array.BYTES_PER_ELEMENT;
+        return value;
+        break;
+      }
+      case 'int32': {
+        const value = this.#dataView.getInt32(this.#position);
+        this.#position += Int32Array.BYTES_PER_ELEMENT;
+        return value;
+        break;
+      }
+      case 'uint32': {
+        const value = this.#dataView.getUint32(this.#position);
+        this.#position += Uint32Array.BYTES_PER_ELEMENT;
+        return value;
+        break;
+      }
+      case 'int64': {
+        const value = this.#dataView.getBigInt64(this.#position);
+        this.#position += BigInt64Array.BYTES_PER_ELEMENT;
+        return value;
+        break;
+      }
+      case 'uint64': {
+        const value = this.#dataView.getBigUint64(this.#position);
+        this.#position += BigUint64Array.BYTES_PER_ELEMENT;
+        return value;
+        break;
+      }
+      case 'float32': {
+        const value = this.#dataView.getFloat32(this.#position);
+        this.#position += Float32Array.BYTES_PER_ELEMENT;
+        return value;
+        break;
+      }
+      case 'float64': {
+        const value = this.#dataView.getFloat64(this.#position);
+        this.#position += Float64Array.BYTES_PER_ELEMENT;
+        return value;
+        break;
+      }
       case 'datetime':
         return this.#decodeDate(options);
         break;
