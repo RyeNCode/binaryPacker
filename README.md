@@ -141,7 +141,6 @@ const myDataObj = {
 |array|4+|4 bytes for the length of the string then the bytes for each element|
 |int8|1|Signed 8bit integer|
 |uint8|1|Unsigned 8bit integer|
-|uint8clamped|1|Unsigned clamped 8bit integer|
 |int16|2|Signed 16bit integer|
 |uint16|2|Unsigned 16bit integer|
 |int32|4|Signed 32bit integer|
