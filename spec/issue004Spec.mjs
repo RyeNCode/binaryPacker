@@ -17,7 +17,7 @@ describe("issues", function () {
       }
     };
 
-    const bp1 = new BinaryPacker(schema);
+    expect(() => { new BinaryPacker(schema); }).toThrow(new Error("undefined types: [sd,bob]"));
 
   });
 });
